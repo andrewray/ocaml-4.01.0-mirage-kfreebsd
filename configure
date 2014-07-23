@@ -766,6 +766,8 @@ case "$arch,$model,$system" in
                     fi;;
   amd64,*,solaris)  as='as --64'
                     aspp='gcc -m64 -c';;
+  amd64,*,freebsd)  as='as'
+                    aspp='cc -c';;
   amd64,*,*)        as='as'
                     aspp='gcc -c';;
   arm,*,freebsd*)   as='cc -c';
