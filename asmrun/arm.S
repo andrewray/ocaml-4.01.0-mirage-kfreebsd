@@ -31,7 +31,7 @@
         .arch   armv7-a
         .fpu    vfpv3-d16
         .thumb
-#elif defined(SYS_linux_eabi)
+#elif defined(SYS_linux_eabi) 
         .arch   armv4t
         .arm
 
@@ -40,6 +40,15 @@
         mov     lr, pc
         bx      \reg
         .endm
+        .macro  cbz reg, lbl
+        cmp     \reg, #0
+        beq     \lbl
+        .endm
+#elif defined(SYS_freebsd)
+        .arch   armv6
+        .arm
+
+    /* Compatibility macros */
         .macro  cbz reg, lbl
         cmp     \reg, #0
         beq     \lbl
