@@ -248,6 +248,10 @@ let read_OCAMLPARAM ppf position =
           | Before_args ->
             first_objfiles := v :: !first_objfiles
         end
+ 
+      | "nopic" ->
+        if !native_code then
+          clear "nopic" [ pic_code ] v
 
       | _ ->
         Printf.eprintf
