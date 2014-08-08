@@ -103,3 +103,6 @@ let pic_code = ref (String.compare "amd64" Config.architecture == 0)
   (* -fPIC (only true by default on amd64) *)
 
 let runtime_variant = ref "";;      (* -runtime-variant *)
+
+let fixedpt = ref 0
+
