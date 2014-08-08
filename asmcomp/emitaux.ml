@@ -93,7 +93,6 @@ let emit_bytes_directive directive s =
    literals as 32- or 64-bit integers. *)
 
 let emit_float64_directive directive f =
-  let x = Int64.bits_of_float (float_of_string f) in
   let fs = float_of_string f in
   let x  =
     if (!Clflags.fixedpt > 0)
